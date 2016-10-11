@@ -1,4 +1,4 @@
-package com.weblogicmonitoring.health;
+package com.ozi.health;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,8 +26,8 @@ public class ApplicationHealthCheckerTest {
 
     @Test
     public void isApplicationRunning_returnsOkMessage() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/webmon").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/ozi").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Weblogic Monitoring application is running!")));
+                .andExpect(content().string(equalTo("OZI application is running!")));
     }
 }

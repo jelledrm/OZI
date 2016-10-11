@@ -1,10 +1,11 @@
-package com.weblogicmonitoring.integrationtest;
+package com.ozi.integrationtest;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
 
 import java.net.URL;
 
+import com.ozi.qpid.QpidConnector;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,12 +30,13 @@ public class ApplicationHealthCheckerIntergrationTest {
 
     @Before
     public void setUp() throws Exception {
-        this.base = new URL("http://localhost:" + port + "/webmon");
+        this.base = new URL("http://localhost:" + port + "/ozi");
     }
 
     @Test
     public void getApplicationHealth_returns_Ok() throws Exception {
+        QpidConnector.test();
         ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
-        assertThat(response.getBody(), equalTo("Weblogic Monitoring application is running!"));
+        assertThat(response.getBody(), equalTo("ozi application is running!"));
     }
 }

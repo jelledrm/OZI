@@ -1,4 +1,4 @@
-package com.weblogicmonitoring.health;
+package com.ozi.health;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

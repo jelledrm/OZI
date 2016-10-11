@@ -21,8 +21,12 @@ buildscript {
 }
 
 jar {
-	baseName = 'weblogic-monitoring'
+	baseName = 'OZI'
 	version = '0.0.1-SNAPSHOT'
+}
+
+springBoot {
+	mainClass = "com.ozi.OZIApplication"
 }
 
 repositories {
@@ -31,7 +35,8 @@ repositories {
 
 dependencies {
 	compile('org.apache.camel:camel-spring-boot-starter:2.17.3')
-	compile("org.springframework.boot:spring-boot-starter-web")
+	compile('org.apache.camel:camel-amqp:2.17.3')
+	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
