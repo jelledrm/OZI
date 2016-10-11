@@ -37,6 +37,6 @@ public class ApplicationHealthCheckerIntergrationTest {
     public void getApplicationHealth_returns_Ok() throws Exception {
         QpidConnector.test();
         ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
-        assertThat(response.getBody(), equalTo("ozi application is running!"));
+        assertThat(response.getBody(), equalTo("OZI application is running!"));
     }
 }

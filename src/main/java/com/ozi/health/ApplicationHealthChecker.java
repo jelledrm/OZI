@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ApplicationHealthChecker {
 
-    @RequestMapping("/webmon")
+    @RequestMapping("/ozi")
     public String isApplicationRunning(){
-        return "Weblogic Monitoring application is running!";
+        return "OZI application is running!";
     }
 
 }

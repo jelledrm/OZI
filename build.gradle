@@ -21,7 +21,7 @@ buildscript {
 }
 
 jar {
-	baseName = 'OZI'
+	baseName = 'ozi'
 	version = '0.0.1-SNAPSHOT'
 }
 
