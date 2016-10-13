@@ -1,5 +1,6 @@
 package com.ozi.health;
 
+import com.ozi.config.OZIApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = OZIApplication.class)
 @AutoConfigureMockMvc
 public class ApplicationHealthCheckerTest {
 

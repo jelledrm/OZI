@@ -1,4 +1,4 @@
-package com.ozi.config;
+package com.ozi.integrationtest;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
@@ -32,6 +32,7 @@ public class ApplicationHealthCheckerIntergrationTest {
     public void setUp() throws Exception {
         this.base = new URL("http://localhost:" + port + "/ozi");
     }
+
 
     @Test
     public void getApplicationHealth_returns_Ok() throws Exception {
