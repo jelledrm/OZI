@@ -1,11 +1,11 @@
-package com.ozi.integrationtest;
+package com.ozi.config;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
 
 import java.net.URL;
 
-import com.ozi.qpid.QpidConnector;
+import com.ozi.config.OZIApplication;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = OZIApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ApplicationHealthCheckerIntergrationTest {
 
     @LocalServerPort
@@ -35,7 +35,6 @@ public class ApplicationHealthCheckerIntergrationTest {
 
     @Test
     public void getApplicationHealth_returns_Ok() throws Exception {
-        QpidConnector.test();
         ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
         assertThat(response.getBody(), equalTo("OZI application is running!"));
     }
