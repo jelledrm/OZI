@@ -24,7 +24,7 @@ public class QpidProducerRoute extends RouteBuilder {
                 String data = exchange.getIn().getBody(String.class);
                 exchange.getIn().setBody(data);
             })
-        .to(ExchangePattern.InOut,"amqp:queue:test");
+        .to(ExchangePattern.InOnly,"amqp:queue:test");
 
 
 //        restConfiguration().component("servlet").port(8080);
