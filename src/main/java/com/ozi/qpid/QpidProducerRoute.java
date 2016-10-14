@@ -23,6 +23,7 @@ public class QpidProducerRoute extends RouteBuilder {
             .process(exchange -> {
                 String data = exchange.getIn().getBody(String.class);
                 exchange.getIn().setBody(data);
+                exchange.getOut().setBody("Thanks for the message; your document will be created soon!!");
             })
         .to(ExchangePattern.InOnly,"amqp:queue:test");
 
